@@ -1,0 +1,84 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .browser { left: 100px; top: 100px; width: 1060px; height: 860px; overflow: hidden; }
+  .chrome { height: 64px; background: #f6f2ef; display: flex; align-items: center; gap: 12px; padding: 0 26px; border-bottom: 1px solid var(--line); }
+  .chrome i { width: 16px; height: 16px; border-radius: 50%; display: block; }
+  .url { margin-left: 26px; flex: 1; height: 34px; border-radius: 99px; background: #fff; border: 1px solid var(--line); display: flex; align-items: center; padding: 0 18px; gap: 10px; font-size: 18px; color: var(--muted); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 30px 48px; }
+  .logo { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 600; }
+  .logo b { width: 34px; height: 34px; border-radius: 10px; background: var(--orange); display: block; }
+  .links { display: flex; gap: 28px; }
+  .links .bar { width: 74px; height: 12px; }
+  .hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; padding: 26px 48px; }
+  .h1 { font-size: 64px; line-height: 1.02; }
+  .h1 span { color: var(--orange); }
+  .btns { display: flex; gap: 14px; margin-top: 34px; }
+  .btn { height: 56px; border-radius: 99px; padding: 0 30px; display: flex; align-items: center; font-size: 21px; font-weight: 500; }
+  .shot { border-radius: 24px; height: 330px; background: linear-gradient(135deg, var(--orange), #c73f18); position: relative; overflow: hidden; }
+  .shot::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; right: -60px; bottom: -80px; background: rgba(255,255,255,0.18); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 40px 48px; }
+  .tile { height: 120px; border-radius: 20px; background: #faf7f5; border: 1px solid var(--line); padding: 22px; }
+  .code { left: 640px; top: 900px; width: 460px; padding: 30px 32px; font-family: Consolas, monospace; font-size: 19px; line-height: 1.75; }
+  .k { color: var(--orange-2); } .s { color: #ffd2bf; } .c { color: rgba(255,255,255,0.4); }
+  .speed { left: 60px; top: 860px; width: 300px; padding: 30px; text-align: center; }
+</style></head>
+<body>
+  <div class="dots"></div>
+  <div class="glow o" style="width:520px;height:520px;right:120px;top:40px"></div>
+  <div class="glow d" style="width:460px;height:460px;left:100px;bottom:40px"></div>
+
+  <div class="card browser">
+    <div class="chrome">
+      <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+      <div class="url"><span class="dot" style="background:#28c840;width:10px;height:10px"></span>yourbusiness.com</div>
+    </div>
+    <div class="nav">
+      <div class="logo"><b></b>Brand</div>
+      <div class="links"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar o" style="width:110px;height:40px"></div></div>
+    </div>
+    <div class="hero">
+      <div>
+        <div class="big h1">Websites that<br>grow your<br><span>business.</span></div>
+        <div class="btns">
+          <div class="btn" style="background:var(--orange);color:#fff">Get started</div>
+          <div class="btn" style="border:2px solid var(--line)">Our work</div>
+        </div>
+      </div>
+      <div class="shot">
+        <div style="position:absolute;left:34px;top:34px;width:220px;padding:22px;border-radius:18px;background:rgba(255,255,255,.95)">
+          <div class="bar o" style="width:60%"></div><div class="bar" style="width:90%;margin-top:14px"></div><div class="bar" style="width:70%;margin-top:14px"></div>
+        </div>
+        <div style="position:absolute;left:34px;bottom:34px;display:flex;gap:10px;align-items:flex-end">
+          <div style="width:30px;height:60px;border-radius:8px;background:rgba(255,255,255,.55)"></div>
+          <div style="width:30px;height:95px;border-radius:8px;background:rgba(255,255,255,.7)"></div>
+          <div style="width:30px;height:130px;border-radius:8px;background:#fff"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="tile"><div class="bar o" style="width:46px;height:46px;border-radius:12px"></div><div class="bar" style="width:70%;margin-top:16px"></div></div>
+      <div class="tile"><div class="bar d" style="width:46px;height:46px;border-radius:12px"></div><div class="bar" style="width:60%;margin-top:16px"></div></div>
+      <div class="tile"><div class="bar o" style="width:46px;height:46px;border-radius:12px;opacity:.5"></div><div class="bar" style="width:75%;margin-top:16px"></div></div>
+    </div>
+  </div>
+
+  <div class="card dark code">
+    <div><span class="k">export default</span> <span class="k">function</span> Home() {</div>
+    <div>&nbsp;&nbsp;<span class="k">return</span> &lt;Hero</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;title=<span class="s">"Grow online"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;mobileFirst seoReady /&gt;;</div>
+    <div>}</div>
+    <div class="c">// fast · responsive · secure</div>
+  </div>
+
+  <div class="card speed">
+    <svg width="200" height="120" viewBox="0 0 200 120">
+      <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#ece6e2" stroke-width="18" stroke-linecap="round"/>
+      <path d="M20 110 A80 80 0 0 1 168 66" fill="none" stroke="#28c840" stroke-width="18" stroke-linecap="round"/>
+    </svg>
+    <div class="big" style="font-size:40px;margin-top:-14px">Fast</div>
+    <div class="label">Page speed</div>
+  </div>
+  <script src="fit.js"></script>
+</body></html>

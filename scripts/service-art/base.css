@@ -1,0 +1,71 @@
+/* Shared styles for the "Our Services" illustrations (rendered to 1200x1200 JPGs by
+   scripts/build-service-images.mjs). fit.js scales each layout to fill the square.
+*/
+@font-face {
+  font-family: "Clash";
+  src: url("../../public/fonts/ClashDisplay/ClashDisplay-Semibold.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Clash";
+  src: url("../../public/fonts/ClashDisplay/ClashDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Clash";
+  src: url("../../public/fonts/ClashDisplay/ClashDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+:root {
+  --orange: #ff5f2d;
+  --orange-2: #ff8a5c;
+  --dark: #0c0705;
+  --peach: #fff3ec;
+  --line: #ece6e2;
+  --muted: #9a918c;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 1200px; height: 1200px; overflow: hidden; }
+
+body {
+  font-family: "Clash", "Segoe UI", sans-serif;
+  color: var(--dark);
+  position: relative;
+  background: radial-gradient(1200px 900px at 50% 45%, #fffaf7 0%, var(--peach) 55%, #fde4d6 100%);
+}
+
+/* soft decorative glows + dotted texture */
+.glow { position: absolute; border-radius: 50%; filter: blur(90px); }
+.glow.o { background: rgba(255, 95, 45, 0.28); }
+.glow.d { background: rgba(12, 7, 5, 0.10); }
+.dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(12, 7, 5, 0.09) 1.6px, transparent 1.6px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 75%);
+}
+
+.card {
+  position: absolute;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 40px 80px -30px rgba(12, 7, 5, 0.28), 0 0 0 1px rgba(12, 7, 5, 0.05);
+}
+.card.dark { background: var(--dark); color: #fff; box-shadow: 0 40px 80px -30px rgba(12, 7, 5, 0.55); }
+
+.bar { height: 14px; border-radius: 99px; background: var(--line); }
+.bar.o { background: var(--orange); }
+.bar.d { background: var(--dark); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 18px; border-radius: 99px;
+  font-size: 22px; font-weight: 500;
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+.label { font-size: 20px; color: var(--muted); font-weight: 500; letter-spacing: 0.02em; }
+.big { font-weight: 600; letter-spacing: -0.02em; }

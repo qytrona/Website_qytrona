@@ -8,7 +8,8 @@
     "start": "next start -p 3005",
     "lint": "eslint",
     "seed:admin": "node --env-file=.env.local scripts/seed-admin.mjs",
-    "seed:posts": "node --env-file=.env.local scripts/seed-posts.mjs"
+    "seed:posts": "node --env-file=.env.local scripts/seed-posts.mjs",
+    "blog:covers": "node --env-file=.env.local scripts/set-blog-covers.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

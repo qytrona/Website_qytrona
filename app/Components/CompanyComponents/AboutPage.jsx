@@ -14,10 +14,10 @@ import {
 } from "./Shared";
 
 const stats = [
-  { value: "500+", label: "Happy Clients" },
-  { value: "600+", label: "Projects Delivered" },
-  { value: "567+", label: "Expert Solutions" },
-  { value: "10+", label: "Industries Served" },
+  { value: "40+", label: "Projects Shipped" },
+  { value: "20+", label: "Clients Served" },
+  { value: "8", label: "Industries" },
+  { value: "5", label: "Core Services" },
 ];
 
 const pillars = [

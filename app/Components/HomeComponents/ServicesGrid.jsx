@@ -161,18 +161,13 @@ function CheckIcon({ className = "" }) {
 }
 
 
-function imageVisual({ src, alt, position = "object-center" }) {
+// Panel images are pre-built at the panel's exact 4:3 size by scripts/build-service-images.mjs
+// (whole source image centred over a blurred fill), so they show in full without cropping.
+function imageVisual({ src, alt }) {
   function ImageVisual() {
     return (
       <div className="relative h-full w-full">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          loading="eager"
-          className={`object-cover ${position}`}
-        />
+        <Image src={src} alt={alt} fill sizes="(min-width: 1024px) 50vw, 100vw" loading="eager" className="object-cover" />
       </div>
     );
   }
@@ -180,30 +175,29 @@ function imageVisual({ src, alt, position = "object-center" }) {
 }
 
 const WebsiteVisual = imageVisual({
-  src: "/Images/WA1.jpg",
-  alt: "Professional, fast and SEO-optimised business website",
-  // crop mostly from the bottom so the headline stays visible
-  position: "object-[center_20%]",
+  src: "/Images/services/website-development-sq.jpg",
+  alt: "Illustration of a business website in a browser, with code and a page-speed gauge",
 });
 
 const MarketingVisual = imageVisual({
-  src: "/Images/WA3.jpg",
-  alt: "Responsive website shown on laptop, tablet and phone",
-});
-
-const SoftwareVisual = imageVisual({
-  src: "/Images/WA4.jpg",
-  alt: "Business web application dashboard on a laptop",
-  position: "object-[center_70%]",
+  src: "/Images/services/digital-marketing-sq.jpg",
+  alt: "Illustration of a sponsored social ad, a growing leads chart and ad channels",
 });
 
 const SeoVisual = imageVisual({
-  src: "/Images/WA5.jpg",
-  alt: "SEO, AEO and GEO search optimisation strategies",
-  position: "object-[center_60%]",
+  src: "/Images/services/seo-sq.jpg",
+  alt: "Illustration of a search results page with your business ranked first",
 });
 
-const AppVisual = imageVisual({ src: "/Images/WA2.jpg", alt: "Mobile app in use on a smartphone" });
+const SoftwareVisual = imageVisual({
+  src: "/Images/services/custom-software-sq.jpg",
+  alt: "Illustration of a custom business dashboard connected to CRM, billing and reports",
+});
+
+const AppVisual = imageVisual({
+  src: "/Images/services/mobile-applications-sq.jpg",
+  alt: "Illustration of two mobile app screens for iOS and Android",
+});
 
 
 
@@ -337,8 +331,8 @@ const services = [
 ];
 
 const stats = [
-  { value: "500+", label: "Happy Clients" },
-  { value: "600+", label: "Projects Delivered" },
+  { value: "20+", label: "Clients Served" },
+  { value: "40+", label: "Projects Shipped" },
 ];
 
 export default function ServicesGrid() {
@@ -372,11 +366,11 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 xl:grid-cols-2 xl:gap-16">
+        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-10 xl:grid-cols-[0.8fr_1.2fr] xl:gap-14">
           {/* Visual panel */}
           <div
             ref={panelRef}
-            className="relative aspect-square w-full overflow-hidden bg-white md:aspect-[4/3] lg:sticky lg:top-24"
+            className="relative mx-auto aspect-square w-full max-w-[560px] overflow-hidden bg-white lg:sticky lg:top-24 lg:max-w-none"
           >
             {/* keyed so each new image re-mounts and slides up from the bottom over the white panel */}
             {inView && (
@@ -420,7 +414,7 @@ export default function ServicesGrid() {
 
             {/* Checklist card */}
             <div className="mt-8 rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-7 lg:grid-cols-1 xl:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-7">
                 {service.features.map((feature) => (
                   <div key={feature.title} className="flex gap-3">
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FF5F2D] text-white">
@@ -438,7 +432,7 @@ export default function ServicesGrid() {
             </div>
 
             {/* Capabilities + stats row */}
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-[1fr_auto] lg:grid-cols-1 xl:grid-cols-[1fr_auto]">
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-[1fr_auto]">
               <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-gray-200 bg-gray-50 p-5">
                 {service.capabilities.map((CapIcon, i) => (
                   <span

@@ -257,8 +257,8 @@ function DisciplineCard({ discipline, index }) {
 
 const stats = [
   { value: "4", label: "Core Disciplines" },
-  { value: "60+", label: "Projects Shipped" },
-  { value: "120+", label: "Clients Served" },
+  { value: "40+", label: "Projects Shipped" },
+  { value: "20+", label: "Clients Served" },
   { value: "1", label: "Team, End to End" },
 ];
 

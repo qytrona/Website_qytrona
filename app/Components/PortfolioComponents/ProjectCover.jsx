@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useInView } from "../CompanyComponents/Shared";
 
 // Animated mockup used as a project cover until real screenshots are added.
@@ -126,8 +127,35 @@ function Phones({ accent, on }) {
 
 const covers = { browser: Browser, dashboard: Dashboard, phone: Phones };
 
-export default function ProjectCover({ cover, className = "" }) {
+// fit "contain" shows the whole image (used on case-study pages); default "cover" fills the frame.
+export default function ProjectCover({ cover, className = "", fit = "cover" }) {
   const [ref, on] = useInView({ threshold: 0.2 });
+
+  // Real screenshot/mockup: cover.type "image" with cover.src (and optional cover.position).
+  if (cover.type === "image") {
+    return (
+      <div ref={ref} className={`relative overflow-hidden bg-[#f3f3f1] ${className}`}>
+        {fit === "contain" ? (
+          // starts zoomed in, then eases out to reveal the whole image when scrolled into view
+          <div
+            className="absolute inset-3 transition-transform duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none sm:inset-4"
+            style={{ transform: on ? "scale(1)" : "scale(1.35)" }}
+          >
+            <Image src={cover.src} alt={cover.alt || ""} fill sizes="(min-width: 1024px) 70vw, 100vw" className="object-contain" />
+          </div>
+        ) : (
+          <Image
+            src={cover.src}
+            alt={cover.alt || ""}
+            fill
+            sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+            className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] ${cover.position || "object-center"}`}
+          />
+        )}
+      </div>
+    );
+  }
+
   const Mock = covers[cover.type] || Browser;
   const dark = cover.accent === "#0c0705";
 

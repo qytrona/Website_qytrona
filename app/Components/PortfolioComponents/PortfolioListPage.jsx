@@ -17,8 +17,8 @@ import { categories, getCategory, projects, projectsInCategory } from "./portfol
 import ProjectCard from "./ProjectCard";
 
 const stats = [
-  { value: "60+", label: "Projects Shipped" },
-  { value: "120+", label: "Clients Served" },
+  { value: "40+", label: "Projects Shipped" },
+  { value: "20+", label: "Clients Served" },
   { value: "8", label: "Industries" },
   { value: "5", label: "Core Services" },
 ];

@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../service-art/base.css"><link rel="stylesheet" href="blog.css">
+<style>
+  .browser { left: 100px; top: 100px; width: 640px; height: 470px; overflow: hidden; }
+  .bar2 { height: 50px; background: #f6f2ef; display: flex; align-items: center; gap: 10px; padding: 0 22px; }
+  .bar2 i { width: 14px; height: 14px; border-radius: 50%; display: block; }
+  .shield { position: absolute; left: 270px; top: 170px; }
+  .list { left: 800px; top: 120px; width: 420px; padding: 34px; display: flex; flex-direction: column; gap: 20px; }
+</style></head>
+<body data-fit-w="1120" data-fit-h="600">
+  <div class="dots"></div>
+  <div class="glow o" style="width:560px;height:560px;left:180px;top:0"></div>
+
+  <div class="card browser">
+    <div class="bar2"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+      <div style="margin-left:20px;flex:1;height:30px;border-radius:99px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 14px;font-size:16px;color:var(--muted)">🔒 yourbusiness.com</div></div>
+    <div style="padding:34px 40px">
+      <div class="bar" style="width:55%;height:22px"></div><div class="bar" style="width:85%;margin-top:18px"></div><div class="bar" style="width:70%;margin-top:12px"></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:150px"><div class="bar" style="height:60px;border-radius:14px"></div><div class="bar" style="height:60px;border-radius:14px"></div><div class="bar" style="height:60px;border-radius:14px"></div></div>
+    </div>
+    <svg class="shield" width="170" height="200" viewBox="0 0 24 28"><path d="M12 1 2 5v8c0 6.5 4.3 11.6 10 14 5.7-2.4 10-7.5 10-14V5L12 1Z" fill="#ff5f2d"/><path d="m7.5 14 3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+
+  <div class="card list">
+    <div class="big" style="font-size:32px">Monthly care</div>
+    <div class="row"><span class="tick" style="background:#e8f8ec;color:#1a8f3a">✓</span>Updates installed</div>
+    <div class="row"><span class="tick" style="background:#e8f8ec;color:#1a8f3a">✓</span>Backup complete</div>
+    <div class="row"><span class="tick" style="background:#e8f8ec;color:#1a8f3a">✓</span>Security scan clean</div>
+    <div class="row"><span class="tick" style="background:#e8f8ec;color:#1a8f3a">✓</span>Uptime monitored</div>
+    <div class="row"><span class="tick" style="background:rgba(255,95,45,.15);color:var(--orange)">•</span>Speed check</div>
+  </div>
+  <script src="../service-art/fit.js"></script>
+</body></html>

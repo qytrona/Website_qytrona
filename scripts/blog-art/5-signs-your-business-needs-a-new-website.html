@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../service-art/base.css"><link rel="stylesheet" href="blog.css">
+<style>
+  .old { left: 100px; top: 160px; width: 560px; height: 420px; transform: rotate(-5deg); overflow: hidden; filter: grayscale(1); opacity: .85; }
+  .old .top { height: 44px; background: #e9e4e1; }
+  .new { left: 560px; top: 100px; width: 680px; height: 500px; overflow: hidden; }
+  .bar2 { height: 52px; background: #f6f2ef; display: flex; align-items: center; gap: 10px; padding: 0 22px; }
+  .bar2 i { width: 14px; height: 14px; border-radius: 50%; display: block; }
+  .sign { left: 120px; top: 540px; padding: 18px 26px; display: flex; gap: 14px; align-items: center; font-size: 26px; font-weight: 600; }
+</style></head>
+<body data-fit-w="1120" data-fit-h="600">
+  <div class="dots"></div>
+  <div class="glow o" style="width:560px;height:560px;right:160px;top:-80px"></div>
+
+  <div class="card old">
+    <div class="top"></div>
+    <div style="padding:30px">
+      <div class="bar" style="width:70%;height:22px"></div>
+      <div class="bar" style="width:90%;margin-top:22px"></div><div class="bar" style="width:80%;margin-top:12px"></div>
+      <div style="display:flex;gap:16px;margin-top:30px"><div style="flex:1;height:140px;background:#e9e4e1;border-radius:10px"></div><div style="flex:1;height:140px;background:#e9e4e1;border-radius:10px"></div></div>
+    </div>
+  </div>
+
+  <div class="card new">
+    <div class="bar2"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+    <div style="padding:40px 44px;display:grid;grid-template-columns:1.1fr 1fr;gap:30px">
+      <div>
+        <div class="big" style="font-size:52px;line-height:1.02">Fresh, fast<br><span style="color:var(--orange)">&amp; modern.</span></div>
+        <div style="display:flex;gap:12px;margin-top:30px"><div class="chip" style="background:var(--orange);color:#fff">Book now</div><div class="chip" style="border:2px solid var(--line)">Call</div></div>
+      </div>
+      <div style="height:250px;border-radius:22px;background:linear-gradient(140deg,var(--orange),#c73f18)"></div>
+    </div>
+  </div>
+
+  <div class="card dark sign"><span class="tick" style="background:var(--orange);color:#fff">5</span>signs it's time</div>
+  <div class="vs" style="left:520px;top:470px;width:96px;height:96px;font-size:40px">→</div>
+  <script src="../service-art/fit.js"></script>
+</body></html>

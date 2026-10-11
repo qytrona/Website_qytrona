@@ -51,7 +51,7 @@ export default function ProjectCard({ project, index = 0 }) {
         <span className="absolute left-6 right-6 top-0 h-px origin-left scale-x-0 bg-[#FF5F2D] transition-transform duration-500 group-hover:scale-x-100 sm:left-7 sm:right-7" />
         <div className="flex items-center justify-between gap-3">
           <span className="text-xs font-medium uppercase tracking-[0.15em] text-[#FF5F2D]">
-            {industryName[project.industry]}
+            {industryName[project.industry] || project.industryLabel}
           </span>
           <span className="font-mono text-xs text-gray-400">
             {String(index + 1).padStart(2, "0")}
@@ -104,7 +104,7 @@ export function FeaturedProjectCard({ project, index = 0 }) {
         <div className="flex items-center justify-between gap-3">
           <span className={`inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.15em] text-[#FF5F2D] group-hover:text-white ${fade}`}>
             <span className={`h-1.5 w-1.5 rounded-full bg-[#FF5F2D] group-hover:bg-white ${fade}`} />
-            {industryName[project.industry]}
+            {industryName[project.industry] || project.industryLabel}
           </span>
           <span className={`font-mono text-xs text-gray-400 group-hover:text-white/60 ${fade}`}>
             {String(index + 1).padStart(2, "0")}

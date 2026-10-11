@@ -7,9 +7,9 @@ import { featured, regions, testimonials } from "./testimonialsData";
 /* ---------------------------------- data ---------------------------------- */
 
 const stats = [
-  { value: "120+", label: "Happy Clients" },
-  { value: "60+", label: "Projects Delivered" },
-  { value: "8", label: "Industries Served" },
+  { value: "20+", label: "Clients Served" },
+  { value: "40+", label: "Projects Shipped" },
+  { value: "8", label: "Industries" },
   { value: "24h", label: "Reply Time" },
 ];
 
@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
       >
         <div className="flex items-center gap-3">
           <Stars className="h-5 w-5" />
-          <span className="text-sm text-gray-600">Loved by 120+ clients</span>
+          <span className="text-sm text-gray-600">Loved by 20+ clients</span>
         </div>
       </PageHero>
 

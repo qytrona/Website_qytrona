@@ -150,7 +150,7 @@ export default function LandingPage() {
                       ))}
                     </div>
                     <p className="text-sm text-gray-600 leading-tight">
-                      500+ Happy Clients
+                      20+ Clients Served
                       <br />
                       Worldwide
                     </p>
@@ -177,9 +177,9 @@ export default function LandingPage() {
                     Business Growth
                   </span>
                   <p className="mt-3 text-2xl sm:text-3xl font-semibold text-gray-900">
-                    567+
+                    40+
                   </p>
-                  <p className="text-sm text-gray-500">Expert Solutions</p>
+                  <p className="text-sm text-gray-500">Projects Shipped</p>
                   <Link
                     href="/portfolio"
                     aria-label="View our work"

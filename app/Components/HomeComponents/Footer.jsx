@@ -279,7 +279,7 @@ export default function Footer() {
                     Technologies
                   </p>
                   <p className="mt-1 text-xs italic text-white/60">
-                    120+ clients · 60+ projects
+                    20+ clients · 40+ projects
                   </p>
                 </div>
               </div>

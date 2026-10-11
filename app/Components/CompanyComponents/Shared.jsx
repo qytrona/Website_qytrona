@@ -528,8 +528,8 @@ const ctaChips = [
 ];
 
 const ctaStats = [
-  { value: "120+", label: "Clients" },
-  { value: "60+", label: "Projects" },
+  { value: "20+", label: "Clients" },
+  { value: "40+", label: "Projects" },
   { value: "24h", label: "Reply time" },
 ];
 

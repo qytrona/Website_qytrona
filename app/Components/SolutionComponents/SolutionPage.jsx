@@ -18,8 +18,8 @@ import SolutionVisual from "./SolutionVisuals";
 import { solutions } from "./solutionsData";
 
 const stats = [
-  { value: "60+", label: "Projects Shipped" },
-  { value: "120+", label: "Clients Served" },
+  { value: "40+", label: "Projects Shipped" },
+  { value: "20+", label: "Clients Served" },
   { value: "4", label: "Core Disciplines" },
   { value: "1", label: "Team, End to End" },
 ];

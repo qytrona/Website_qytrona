@@ -1,0 +1,70 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .phone { position: absolute; width: 360px; height: 740px; border-radius: 56px; background: var(--dark); padding: 14px;
+    box-shadow: 0 50px 90px -30px rgba(12,7,5,.55); }
+  .screen { width: 100%; height: 100%; border-radius: 44px; overflow: hidden; position: relative; background: #fff; }
+  .notch { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); width: 110px; height: 30px; border-radius: 99px; background: var(--dark); z-index: 2; }
+  .p1 { left: 430px; top: 230px; transform: rotate(-8deg); }
+  .p2 { left: 800px; top: 170px; transform: rotate(6deg); }
+
+  /* screen 1: shop app */
+  .s1 .top { padding: 66px 26px 0; }
+  .s1 .hero { margin: 18px 26px 0; height: 220px; border-radius: 26px; background: linear-gradient(140deg, var(--orange), #c73f18); padding: 24px; color: #fff; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 26px 0; }
+  .grid div { height: 130px; border-radius: 20px; background: #faf3ef; }
+  .tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid var(--line); background: #fff; }
+  .tabbar i { width: 28px; height: 28px; border-radius: 9px; background: #e9e1dc; display: block; }
+  .tabbar i.on { background: var(--orange); }
+
+  /* screen 2: dark booking/stats app */
+  .s2 { background: #140d0a; color: #fff; }
+  .s2 .top { padding: 70px 28px 0; }
+  .ringwrap { display: flex; justify-content: center; margin-top: 26px; }
+  .list { margin: 26px 22px 0; display: flex; flex-direction: column; gap: 12px; }
+  .list div { height: 74px; border-radius: 20px; background: rgba(255,255,255,.07); display: flex; align-items: center; gap: 14px; padding: 0 16px; }
+  .list b { width: 42px; height: 42px; border-radius: 13px; background: rgba(255,95,45,.25); display: block; }
+  .list span { flex: 1; height: 12px; border-radius: 99px; background: rgba(255,255,255,.18); }
+
+  .toast { left: 170px; top: 640px; width: 330px; padding: 20px 22px; display: flex; gap: 16px; align-items: center; z-index: 5; }
+  .badge { left: 700px; top: 950px; padding: 22px 26px; display: flex; gap: 14px; align-items: center; z-index: 5; }
+  .ic { width: 52px; height: 52px; border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+</style></head>
+<body>
+  <div class="dots"></div>
+  <div class="glow o" style="width:620px;height:620px;left:480px;top:220px"></div>
+
+  <div class="phone p1"><div class="screen s1">
+    <div class="notch"></div>
+    <div class="top"><div class="label" style="font-size:17px">Good morning</div><div class="big" style="font-size:30px">Discover</div></div>
+    <div class="hero"><div style="font-size:18px;opacity:.85">New arrivals</div><div class="big" style="font-size:34px;line-height:1.05;margin-top:8px">Fresh picks<br>for you</div>
+      <div style="margin-top:22px;width:120px;height:42px;border-radius:99px;background:#fff;color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600">Shop now</div></div>
+    <div class="grid"><div></div><div style="background:#fde4d6"></div><div style="background:#fde4d6"></div><div></div></div>
+    <div class="tabbar"><i class="on"></i><i></i><i></i><i></i></div>
+  </div></div>
+
+  <div class="phone p2"><div class="screen s2">
+    <div class="notch"></div>
+    <div class="top"><div style="font-size:17px;color:rgba(255,255,255,.55)">Your activity</div><div class="big" style="font-size:30px">This week</div></div>
+    <div class="ringwrap">
+      <svg width="210" height="210" viewBox="0 0 210 210">
+        <circle cx="105" cy="105" r="84" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="22"/>
+        <circle cx="105" cy="105" r="84" fill="none" stroke="#ff5f2d" stroke-width="22" stroke-linecap="round" stroke-dasharray="390 528" transform="rotate(-90 105 105)"/>
+        <text x="105" y="118" text-anchor="middle" fill="#fff" font-family="Clash" font-weight="600" font-size="40">74%</text>
+      </svg>
+    </div>
+    <div class="list"><div><b></b><span></span></div><div><b></b><span style="max-width:60%"></span></div><div><b></b><span style="max-width:75%"></span></div></div>
+  </div></div>
+
+  <div class="card toast">
+    <div class="ic" style="background:var(--orange)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+    <div><div class="big" style="font-size:22px">Order confirmed</div><div class="label" style="font-size:17px">Arriving tomorrow</div></div>
+  </div>
+
+  <div class="card badge">
+    <div class="ic" style="background:var(--dark)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+    <div class="ic" style="background:var(--orange)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+    <div><div class="big" style="font-size:22px">iOS &amp; Android</div><div class="label" style="font-size:17px">Store-ready builds</div></div>
+  </div>
+  <script src="fit.js"></script>
+</body></html>

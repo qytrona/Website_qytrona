@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .app { left: 100px; top: 100px; width: 960px; height: 820px; display: grid; grid-template-columns: 200px 1fr; overflow: hidden; }
+  .side { background: var(--dark); color: #fff; padding: 30px 22px; display: flex; flex-direction: column; gap: 12px; }
+  .side .logo { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 600; margin-bottom: 22px; }
+  .side .logo b { width: 32px; height: 32px; border-radius: 9px; background: var(--orange); display: block; }
+  .nav { height: 50px; border-radius: 14px; display: flex; align-items: center; gap: 12px; padding: 0 14px; }
+  .nav i { width: 22px; height: 22px; border-radius: 7px; background: rgba(255,255,255,.25); display: block; }
+  .nav span { height: 10px; flex: 1; border-radius: 99px; background: rgba(255,255,255,.2); }
+  .nav.on { background: rgba(255,95,45,.18); }
+  .nav.on i { background: var(--orange); }
+
+  .main { padding: 32px 34px; background: #fbf8f6; }
+  .head { display: flex; justify-content: space-between; align-items: center; }
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 24px; }
+  .kpi { background: #fff; border-radius: 20px; padding: 22px; border: 1px solid var(--line); }
+  .panels { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; margin-top: 18px; }
+  .panel { background: #fff; border-radius: 20px; padding: 24px; border: 1px solid var(--line); height: 480px; }
+  .cols { display: flex; align-items: flex-end; gap: 12px; height: 370px; margin-top: 20px; }
+  .cols div { flex: 1; border-radius: 10px 10px 4px 4px; background: #f1e9e4; }
+  .cols div.o { background: var(--orange); }
+  .task { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .task:last-child { border: 0; }
+  .tick { width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  .flow { left: 160px; top: 960px; padding: 22px 28px; display: flex; align-items: center; gap: 18px; }
+  .node { padding: 12px 20px; border-radius: 14px; font-size: 21px; font-weight: 500; }
+  .arrow { color: var(--muted); font-size: 26px; }
+</style></head>
+<body>
+  <div class="dots"></div>
+  <div class="glow o" style="width:560px;height:560px;right:80px;top:-40px"></div>
+  <div class="glow d" style="width:420px;height:420px;left:60px;bottom:-60px"></div>
+
+  <div class="card app">
+    <div class="side">
+      <div class="logo"><b></b>Workspace</div>
+      <div class="nav on"><i></i><span></span></div>
+      <div class="nav"><i></i><span></span></div>
+      <div class="nav"><i></i><span style="max-width:60%"></span></div>
+      <div class="nav"><i></i><span style="max-width:75%"></span></div>
+      <div class="nav"><i></i><span style="max-width:55%"></span></div>
+    </div>
+    <div class="main">
+      <div class="head">
+        <div><div class="label">Operations</div><div class="big" style="font-size:38px">Dashboard</div></div>
+        <div class="chip" style="background:var(--orange);color:#fff">+ New order</div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Orders</div><div class="bar o" style="width:55%;height:20px;margin-top:14px"></div></div>
+        <div class="kpi"><div class="label">Inventory</div><div class="bar d" style="width:70%;height:20px;margin-top:14px"></div></div>
+        <div class="kpi"><div class="label">Invoices</div><div class="bar" style="width:45%;height:20px;margin-top:14px;background:#ffc9b3"></div></div>
+      </div>
+      <div class="panels">
+        <div class="panel">
+          <div class="label">Monthly throughput</div>
+          <div class="cols"><div style="height:40%"></div><div style="height:55%"></div><div style="height:48%"></div><div style="height:66%"></div><div class="o" style="height:78%"></div><div class="o" style="height:92%"></div><div style="height:70%"></div></div>
+        </div>
+        <div class="panel">
+          <div class="label" style="margin-bottom:6px">Automated tasks</div>
+          <div class="task"><span class="tick" style="background:#e8f8ec;color:#1a8f3a">✓</span><span class="bar" style="flex:1"></span></div>
+          <div class="task"><span class="tick" style="background:#e8f8ec;color:#1a8f3a">✓</span><span class="bar" style="flex:1;max-width:75%"></span></div>
+          <div class="task"><span class="tick" style="background:rgba(255,95,45,.15);color:var(--orange)">●</span><span class="bar" style="flex:1;max-width:85%"></span></div>
+          <div class="task"><span class="tick" style="background:#f3ece8;color:var(--muted)">○</span><span class="bar" style="flex:1;max-width:60%"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card flow">
+    <span class="node" style="background:var(--peach);color:var(--orange)">CRM</span><span class="arrow">→</span>
+    <span class="node" style="background:var(--dark);color:#fff">Your software</span><span class="arrow">→</span>
+    <span class="node" style="background:var(--peach);color:var(--orange)">Billing</span><span class="arrow">→</span>
+    <span class="node" style="background:var(--peach);color:var(--orange)">Reports</span>
+  </div>
+  <script src="fit.js"></script>
+</body></html>

@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const clashDisplay = localFont({
@@ -29,9 +28,11 @@ const clashDisplay = localFont({
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
+// Self-hosted (copied from Next's bundled Geist Mono) so builds never depend on reaching Google Fonts.
+const geistMono = localFont({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  src: [{ path: "../public/fonts/GeistMono/GeistMono-Variable.woff2", weight: "100 900", style: "normal" }],
+  display: "swap",
   preload: false, // only used for small labels; keep it from competing with first paint
 });
 

@@ -1,0 +1,72 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  /* social ad post */
+  .post { left: 100px; top: 100px; width: 470px; padding: 26px; }
+  .who { display: flex; align-items: center; gap: 14px; }
+  .avatar { width: 54px; height: 54px; border-radius: 50%; background: var(--orange); }
+  .media { margin-top: 22px; height: 360px; border-radius: 22px; position: relative; overflow: hidden;
+    background: linear-gradient(150deg, #0c0705 0%, #3a1a10 55%, var(--orange) 140%); }
+  .media .sale { position: absolute; left: 30px; bottom: 30px; color: #fff; font-size: 52px; line-height: 1; }
+  .media .sale small { display: block; font-size: 22px; font-weight: 500; color: #ffd2bf; margin-bottom: 10px; }
+  .media .ring { position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; border-radius: 50%; border: 40px solid rgba(255,95,45,.55); }
+  .cta { margin-top: 20px; height: 62px; border-radius: 16px; background: var(--orange); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 22px; font-weight: 500; }
+  .react { display: flex; gap: 26px; margin-top: 18px; color: var(--muted); font-size: 20px; }
+
+  /* growth chart */
+  .chart { left: 620px; top: 100px; width: 560px; padding: 34px; }
+  .bars { display: flex; align-items: flex-end; gap: 18px; height: 260px; margin-top: 26px; }
+  .bars div { flex: 1; border-radius: 14px 14px 6px 6px; background: #f3ece8; }
+  .bars div.on { background: linear-gradient(180deg, var(--orange-2), var(--orange)); }
+
+  /* megaphone + chips */
+  .mega { left: 640px; top: 620px; width: 230px; height: 230px; display: flex; align-items: center; justify-content: center; }
+  .chips { position: absolute; left: 900px; top: 630px; display: flex; flex-direction: column; gap: 16px; }
+  .eng { left: 100px; top: 900px; width: 1080px; padding: 44px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .eng .k { font-size: 44px; margin-top: 6px; }
+  .chips .chip { background: #fff; box-shadow: 0 20px 40px -20px rgba(12,7,5,.3); }
+</style></head>
+<body>
+  <div class="dots"></div>
+  <div class="glow o" style="width:560px;height:560px;left:80px;top:-80px"></div>
+  <div class="glow o" style="width:420px;height:420px;right:120px;bottom:60px;opacity:.7"></div>
+
+  <div class="card post">
+    <div class="who">
+      <div class="avatar"></div>
+      <div><div class="big" style="font-size:24px">Your Brand</div><div class="label" style="font-size:17px">Sponsored</div></div>
+    </div>
+    <div class="media"><div class="ring"></div><div class="sale big"><small>New collection</small>Shop the<br>launch</div></div>
+    <div class="cta">Learn more <span>→</span></div>
+    <div class="react"><span>♥ Like</span><span>💬 Comment</span><span>↗ Share</span></div>
+  </div>
+
+  <div class="card chart">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div><div class="label">Leads this quarter</div><div class="big" style="font-size:44px;margin-top:6px">Growing</div></div>
+      <div class="chip" style="background:#e8f8ec;color:#1a8f3a">▲ Up</div>
+    </div>
+    <div class="bars">
+      <div style="height:30%"></div><div style="height:42%"></div><div style="height:38%"></div>
+      <div class="on" style="height:58%"></div><div class="on" style="height:72%"></div><div class="on" style="height:94%"></div>
+    </div>
+  </div>
+
+  <div class="card eng">
+    <div><div class="label">Reach</div><div class="big k">Wider</div><div class="bar o" style="width:80%;margin-top:14px"></div></div>
+    <div><div class="label">Engagement</div><div class="big k">Higher</div><div class="bar o" style="width:65%;margin-top:14px;opacity:.7"></div></div>
+    <div><div class="label">Cost per lead</div><div class="big k">Lower</div><div class="bar d" style="width:40%;margin-top:14px"></div></div>
+  </div>
+
+  <div class="card dark mega">
+    <svg width="130" height="130" viewBox="0 0 24 24" fill="none" stroke="#ff5f2d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/>
+    </svg>
+  </div>
+  <div class="chips">
+    <div class="chip"><span class="dot" style="background:var(--orange)"></span>Google Ads</div>
+    <div class="chip"><span class="dot" style="background:#1877f2"></span>Meta Ads</div>
+    <div class="chip"><span class="dot" style="background:var(--dark)"></span>Social Media</div>
+  </div>
+  <script src="fit.js"></script>
+</body></html>

@@ -197,7 +197,7 @@ function LifeCard() {
 
       <div className="relative mt-auto grid grid-cols-3 gap-4 pt-10">
         {[
-          { value: "60+", label: "Projects shipped" },
+          { value: "40+", label: "Projects shipped" },
           { value: "4", label: "Disciplines" },
           { value: "100%", label: "Real ownership" },
         ].map((s) => (

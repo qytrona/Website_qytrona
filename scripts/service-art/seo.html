@@ -1,0 +1,70 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .search { left: 100px; top: 100px; width: 960px; padding: 34px 40px; }
+  .box { height: 84px; border-radius: 99px; border: 2px solid var(--line); display: flex; align-items: center; gap: 20px; padding: 0 30px; font-size: 28px; }
+  .box .q { flex: 1; }
+  .box .go { width: 54px; height: 54px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; }
+  .result { display: flex; gap: 22px; align-items: flex-start; padding: 30px 26px; border-radius: 22px; margin-top: 22px; }
+  .result.top { background: var(--peach); border: 2px solid rgba(255,95,45,.35); }
+  .rank { width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 600; flex-shrink: 0; }
+  .site { font-size: 19px; color: #1a8f3a; }
+  .title { font-size: 30px; font-weight: 600; margin: 4px 0 12px; }
+  .title.o { color: var(--orange); }
+
+  .trend { left: 100px; top: 860px; width: 460px; padding: 30px 34px; }
+  .kw { left: 600px; top: 860px; width: 460px; padding: 30px 34px; }
+  .kw .row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 22px; }
+  .kw .row:last-child { border: 0; }
+  .pos { font-weight: 600; color: var(--orange); }
+</style></head>
+<body>
+  <div class="dots"></div>
+  <div class="glow o" style="width:560px;height:560px;right:60px;top:-60px"></div>
+  <div class="glow d" style="width:420px;height:420px;left:80px;bottom:-40px"></div>
+
+  <div class="card search">
+    <div class="box">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a918c" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="q">best web design company near me</span>
+      <span class="go"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+
+    <div class="result top">
+      <div class="rank" style="background:var(--orange);color:#fff">#1</div>
+      <div style="flex:1">
+        <div class="site">yourbusiness.com › services</div>
+        <div class="title o">Your Business — Websites, SEO &amp; Marketing</div>
+        <div class="bar" style="width:92%"></div><div class="bar" style="width:70%;margin-top:10px"></div>
+      </div>
+      <div class="chip" style="background:#fff;color:var(--orange);border:2px solid rgba(255,95,45,.35)">★ Top result</div>
+    </div>
+    <div class="result">
+      <div class="rank" style="background:#f3ece8;color:var(--muted)">#2</div>
+      <div style="flex:1"><div class="bar" style="width:30%;height:12px"></div><div class="bar" style="width:62%;height:20px;margin:12px 0"></div><div class="bar" style="width:85%"></div></div>
+    </div>
+    <div class="result">
+      <div class="rank" style="background:#f3ece8;color:var(--muted)">#3</div>
+      <div style="flex:1"><div class="bar" style="width:26%;height:12px"></div><div class="bar" style="width:55%;height:20px;margin:12px 0"></div><div class="bar" style="width:78%"></div></div>
+    </div>
+  </div>
+
+  <div class="card dark trend">
+    <div class="label" style="color:rgba(255,255,255,.55)">Organic traffic</div>
+    <div class="big" style="font-size:40px;margin-top:4px">Climbing</div>
+    <svg width="392" height="150" viewBox="0 0 452 120" preserveAspectRatio="none" style="margin-top:14px">
+      <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff5f2d" stop-opacity=".45"/><stop offset="1" stop-color="#ff5f2d" stop-opacity="0"/></linearGradient></defs>
+      <path d="M0 105 C60 100 90 88 140 84 S230 60 270 56 S360 26 452 10 L452 120 L0 120 Z" fill="url(#g)"/>
+      <path d="M0 105 C60 100 90 88 140 84 S230 60 270 56 S360 26 452 10" fill="none" stroke="#ff5f2d" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="446" cy="12" r="9" fill="#fff" stroke="#ff5f2d" stroke-width="5"/>
+    </svg>
+  </div>
+
+  <div class="card kw">
+    <div class="label" style="margin-bottom:6px">Keyword rankings</div>
+    <div class="row"><span>web design agency</span><span class="pos">▲ Top 3</span></div>
+    <div class="row"><span>seo services</span><span class="pos">▲ Page 1</span></div>
+    <div class="row"><span>website near me</span><span class="pos">▲ Page 1</span></div>
+  </div>
+  <script src="fit.js"></script>
+</body></html>

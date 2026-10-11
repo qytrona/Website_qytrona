@@ -163,38 +163,42 @@ function MenuToggle({ open, onClick }) {
 
 /* ---------------------------------- data ---------------------------------- */
 
+// Images are the "Our Services" illustrations (scripts/build-service-images.mjs).
 const solutionCards = [
   {
     title: "Website Development",
     href: "/solutions/website-development",
-    desc: "Modern, high-converting websites built for growth.",
     icon: "layout",
     theme: "dark",
-    preview: "gallery",
+    image: "/Images/services/website-development-sq.jpg",
   },
   {
     title: "Digital Marketing",
     href: "/solutions/digital-marketing",
-    desc: "SEO, ads & social media that drive real growth.",
     icon: "megaphone",
     theme: "peach",
-    preview: "chart",
+    image: "/Images/services/digital-marketing-sq.jpg",
   },
   {
     title: "Mobile Application Development",
     href: "/solutions/mobile-app-development",
-    desc: "Native & cross-platform apps built for scale.",
     icon: "phone",
     theme: "white",
-    image: "/Images/MD1.png",
+    image: "/Images/services/mobile-applications-sq.jpg",
   },
   {
     title: "Search Engine Optimization",
     href: "/solutions/seo",
-    desc: "Data-driven SEO that grows your organic traffic.",
     icon: "search",
     theme: "peach",
-    preview: "chart",
+    image: "/Images/services/seo-sq.jpg",
+  },
+  {
+    title: "Custom Software Development",
+    href: "/solutions/custom-software",
+    icon: "gear",
+    theme: "dark",
+    image: "/Images/services/custom-software-sq.jpg",
   },
 ];
 
@@ -389,70 +393,9 @@ const solutionCardThemes = {
   white: { wrap: "bg-white text-[#0c0705] border border-black/10 shadow-sm" },
 };
 
-function SolutionPreview({ variant }) {
-  if (variant === "gallery") {
-    return (
-      <div className="grid grid-cols-2 gap-1.5 h-full">
-        <div className="rounded-lg bg-gradient-to-br from-indigo-500/80 to-violet-800" />
-        <div className="rounded-lg bg-gradient-to-br from-fuchsia-500/70 to-purple-900" />
-        <div className="rounded-lg bg-gradient-to-br from-neutral-700 to-neutral-900" />
-        <div className="rounded-lg bg-gradient-to-br from-violet-400/70 to-indigo-900" />
-      </div>
-    );
-  }
-
-  if (variant === "chart") {
-    return (
-      <div className="relative h-full p-3">
-        <div className="absolute inset-3 rounded-xl bg-white shadow-md border border-black/5 p-3 flex flex-col">
-          <div className="flex items-end gap-1.5 h-10 mb-2">
-            {[35, 60, 45, 80, 55, 70].map((h, i) => (
-              <div
-                key={i}
-                className="flex-1 rounded-full bg-orange-500/70"
-                style={{ height: `${h}%` }}
-              />
-            ))}
-          </div>
-          <div className="h-1.5 w-3/4 bg-neutral-200 rounded-full mb-1.5" />
-          <div className="h-1.5 w-1/2 bg-neutral-200 rounded-full" />
-        </div>
-        <div className="absolute right-4 bottom-4 w-14 h-14 rounded-full bg-white shadow-lg border border-black/5 flex items-center justify-center">
-          <span className="text-[11px] font-semibold text-orange-500">+24%</span>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative h-full p-3">
-      <div className="absolute inset-3 rounded-xl bg-white shadow-md border border-black/5 p-3 flex flex-col gap-1.5">
-        <div className="h-1.5 w-2/3 bg-neutral-200 rounded-full" />
-        <div className="h-1.5 w-1/2 bg-neutral-200 rounded-full" />
-        <div className="mt-auto flex items-center gap-2">
-          <svg viewBox="0 0 36 36" className="w-9 h-9 -rotate-90">
-            <circle cx="18" cy="18" r="15" fill="none" stroke="#f3f4f6" strokeWidth="4" />
-            <circle
-              cx="18"
-              cy="18"
-              r="15"
-              fill="none"
-              stroke="#f97316"
-              strokeWidth="4"
-              strokeDasharray="70 100"
-              strokeLinecap="round"
-            />
-          </svg>
-          <div className="h-1.5 w-10 bg-neutral-200 rounded-full" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function SolutionsMenu({ onNavigate }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 xl:gap-8">
       {solutionCards.map((card) => (
         <Link
           key={card.title}
@@ -462,24 +405,18 @@ function SolutionsMenu({ onNavigate }) {
             solutionCardThemes[card.theme].wrap
           }`}
         >
-          <h4 className="p-6 pb-3 min-h-[4.25rem] flex items-start text-lg font-semibold leading-snug tracking-tight">
+          <h4 className="p-4 pb-2 min-h-[3.5rem] flex items-start text-sm sm:text-base font-semibold leading-snug tracking-tight xl:p-6 xl:pb-3 xl:min-h-[4.25rem] xl:text-lg">
             {card.title}
           </h4>
 
-          <div className="relative aspect-[3/2] overflow-hidden">
-            {card.image ? (
-              <Image
-                src={card.image}
-                alt={card.title}
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
-              />
-            ) : (
-              <div className="h-full transition-transform duration-500 ease-out group-hover:scale-[1.06]">
-                <SolutionPreview variant={card.preview} />
-              </div>
-            )}
+          <div className="relative aspect-square overflow-hidden">
+            <Image
+              src={card.image}
+              alt={card.title}
+              fill
+              sizes="(min-width: 1024px) 20vw, 50vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+            />
           </div>
         </Link>
       ))}
@@ -978,9 +915,11 @@ export default function Navbar() {
                                 <Link
                                   href={c.href}
                                   onClick={() => setMobileOpen(false)}
-                                  className="flex items-center gap-3 px-3 py-2.5 text-lg text-black hover:text-[#FF5F2D] transition-colors"
+                                  className="flex items-center gap-3 px-3 py-2 text-base text-black hover:text-[#FF5F2D] transition-colors"
                                 >
-                                  <Icon name={c.icon} className="w-6 h-6 text-[#FF5F2D]" />
+                                  <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-black/10">
+                                    <Image src={c.image} alt="" fill sizes="44px" className="object-cover" />
+                                  </span>
                                   {c.title}
                                 </Link>
                               </li>

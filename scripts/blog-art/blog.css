@@ -1,0 +1,11 @@
+/* Blog cover frame: 1600x1000, rendered by scripts/build-blog-covers.mjs. Content is fitted into a
+   centred 1120x600 safe box (data-fit-w/h on <body>) so it survives the 4:3 card and 21:9 banner crops. */
+html, body { width: 1600px; height: 1000px; }
+body { background: radial-gradient(1400px 900px at 50% 50%, #fffaf7 0%, var(--peach) 55%, #fde4d6 100%); }
+.vs {
+  position: absolute; width: 120px; height: 120px; border-radius: 50%;
+  background: var(--dark); color: #fff; display: flex; align-items: center; justify-content: center;
+  font-size: 40px; font-weight: 600; box-shadow: 0 30px 60px -20px rgba(12, 7, 5, 0.5); border: 8px solid #fff;
+}
+.tick { width: 34px; height: 34px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; font-weight: 600; }
+.row { display: flex; align-items: center; gap: 16px; font-size: 24px; }

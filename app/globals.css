@@ -117,3 +117,13 @@ body {
     min-height: 420px;
   }
 }
+
+/* progress bar for the auto-playing "Design details" explorer on case-study pages */
+@keyframes detail-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
